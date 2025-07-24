@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ─── Your regular app theme ──────────────────────────────── -->
+    <style name="Theme.Feedlove" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorPrimary">#007AFF</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
+    </style>
+
+    <!-- ─── Splash theme for Android 12+ via SplashScreen API ───── -->
+    <style name="Theme.Feedlove.Splash" parent="Theme.SplashScreen">
+        <!-- these two require API 31, but we're telling lint to ignore that -->
+        <item name="android:windowSplashScreenAnimatedIcon"
+            tools:ignore="NewApi">@drawable/logo_feedlove</item>
+        <item name="android:windowSplashScreenIconBackgroundColor"
+            tools:ignore="NewApi">#FFFFFF</item>
+
+        <!-- this one is fine on all APIs -->
+        <item name="windowSplashScreenBackground">#FFFFFF</item>
+
+        <!-- after the splash, switch into your normal app theme -->
+        <item name="postSplashScreenTheme">@style/Theme.Feedlove</item>
+    </style>
+
+</resources>
